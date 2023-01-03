@@ -4,7 +4,7 @@ x-stoplight:
 info:
   title: api_1
   version: '1.0'
-host: 'localhost:3000'
+host: localhost:3000
 schemes:
   - http
 produces:
@@ -12,7 +12,7 @@ produces:
 consumes:
   - application/json
 paths:
-  '/users/{userId}':
+  /users/{userId}:
     parameters:
       - type: integer
         name: userId
@@ -39,7 +39,7 @@ paths:
         '404':
           description: User Not Found
           schema:
-            type: 'string'
+            type: string
           examples: {}
       operationId: get-users-userId
       description: Retrieve the information of the user with the matching user ID.
@@ -63,11 +63,11 @@ paths:
         '404':
           description: User Not Found
           schema:
-            type: 'string'
+            type: string
         '409':
           description: Email Already Taken
           schema:
-            type: 'string'
+            type: string
       description: Update the information of an existing user.
       parameters:
         - in: body
@@ -81,7 +81,7 @@ paths:
                 type: string
               email:
                 type: string
-                description: 'If a new email is given, the user''s email verified property will be set to false.'
+                description: If a new email is given, the user's email verified property will be set to false.
               dateOfBirth:
                 type: string
           description: Patch user properties to update.
@@ -105,11 +105,11 @@ paths:
         '400':
           description: Missing Required Information
           schema:
-            type: 'string'
+            type: string
         '409':
           description: Email Already Taken
           schema:
-            type: 'string'
+            type: string
       description: Create a new user.
       parameters:
         - in: body
@@ -182,5 +182,4 @@ definitions:
       - lastName
       - email
       - emailVerified
-# This API has no security
 security: []
